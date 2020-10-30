@@ -1,0 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    <jsp:forward page="">
+    	<jsp:param value="홍길자" name="name"/> <!--변수명, 값  -->
+    </jsp:forward>

@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	/*
+	앞에서 넘어온 폼 값을 받아서 평균을 구합니다.
+	평균이 60 이상이라면 score_quiz03으로 이공해서 평균과 이름을 출력
+	평균이 +60이하이면 score_quiz04 으로 이동해서 "~님은 불합격입니다"
+	
+	조건: 세션을 사용하지 않습니다.
+	*/
+	
+	request.setCharacterEncoding("utf-8");
+
+
+	String name = request.getParameter("name");
+	Double kor = Double.parseDouble(request.getParameter("kor"));
+	Double eng =  Double.parseDouble(request.getParameter("eng"));
+	Double  math = Double.parseDouble(request.getParameter("math"));
+	
+	
+	int avg = (kor+eng+math) /3;
+	request.setAttribute("avg", avg);
+	
+	if(avg >= 60){ %>
+		<jsp:forward page="score_quiz03.jsp"/>
+		
+		<%
+		
+	}else{
+	%>
+	
+		<jsp:forward page="score_quiz04.jsp"/>
+		
+	<%
+	}
+%>

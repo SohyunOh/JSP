@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!--
+	<iframe src="req_basic.jsp"></iframe>
+	-->
+	<div align="center"> <!-- 블럭 -->
+		<table border="1">
+			<tr>
+			<th>이미지</th>
+			<th>강의명</th>
+			<th>내용</th>
+			<th>일자</th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

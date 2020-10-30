@@ -1,0 +1,36 @@
+<%@page import="com.session.User"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    <%
+    
+    /*
+	1.사용자 객체를 받은 다음에 User 객체를 생성하고 사용자의 입력값을 지정한 후에
+   		UsreRepository클래스에 저장해 주세요.
+   		
+   	2.join03페이지 이동
+    */
+       
+    User user = new User();
+
+    request.setCharacterEncoding("utf");
+    
+   	String id = request.getParameter("id");
+    String pw = request.getParameter("pw");
+    String name = request.getParameter("name");
+    String birth = (String)request.getParameter("birth");
+    
+ 
+    user.setId("id");
+    user.setPw("pw");
+    user.setName("name");
+    user.setBirth("birth");
+    
+    
+    response.sendRedirect("join03.jsp");
+    
+    
+    %>
+    
+    
