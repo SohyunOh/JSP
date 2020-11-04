@@ -26,4 +26,18 @@
     <!--
     <Manager pathname="" />
     -->
+    
+     <Resource
+    auth="container"
+    driverClassName = "oracle.jdbc.driver.OracleDriver"
+    url = "jdbc:oracle:thin:@localhost:1521/XEPDB1"
+    username = "JSP"
+    password = "JSP"
+    name = "jdbc/oracle"
+    type = "javax.sql.DataSource"
+    maxActive = "300"
+    maxWait = "1000"    
+    />
+    
+    
 </Context>
