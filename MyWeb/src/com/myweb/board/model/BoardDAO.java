@@ -77,18 +77,67 @@ public class BoardDAO {
 		}
 		
 		//글 조회 리스트
-		public ArrayList<BoardVO> getList() {
+//
+//		public ArrayList<BoardVO> getList() {
+//			ArrayList<BoardVO> list= new ArrayList<>();
+//			/*
+//			 * 데이터베이스에서 번호를 내림차순으로 조회해서 리스트에
+//			 * 담는 코드를 작성
+//			 */
+//			String sql = "SELECT * FROM board ORDER BY bno DESC";
+//			
+//			try {
+//				conn = ds.getConnection();
+//				pstmt = conn.prepareStatement(sql); //sql 불러옴
+//				rs = pstmt.executeQuery(); 
+//				
+//				while (rs.next()) {
+//					int bno = rs.getInt("bno");
+//					String writer = rs.getString("writer");
+//					String title = rs.getString("title");
+//					String content = rs.getString("content");
+//					Timestamp regdate = rs.getTimestamp("regdate");
+//					int hit = rs.getInt("hit");
+//					
+//					//vo에 넣어주고
+//					BoardVO vo = new BoardVO(bno, writer, title, content, regdate, hit);
+//					
+//					list.add(vo); //리스트에 담아주기
+//				}
+//				
+//			} catch (Exception e) {
+//				System.out.println("글 조회 오류");
+//				e.printStackTrace();
+//			} finally {
+//				JdbcUtil.close(conn, pstmt, rs);
+//			}
+//			return list;
+//		}
+		
+		//게시글 페이지 조회
+		public ArrayList<BoardVO> getList( int pageNum, int amount) {
 			ArrayList<BoardVO> list= new ArrayList<>();
-			/*
-			 * 데이터베이스에서 번호를 내림차순으로 조회해서 리스트에
-			 * 담는 코드를 작성
-			 */
-			
-			String sql = "SELECT * FROM board ORDER BY bno DESC";
-			
+		
+			String sql = "SELECT\r\n" + 
+					"    *\r\n" + 
+					"FROM(\r\n" + 
+					"        SELECT rownum rn,\r\n" + 
+					"                    bno,\r\n" + 
+					"                    writer,\r\n" + 
+					"                    title,\r\n" + 
+					"                    content,\r\n" + 
+					"                    regdate,\r\n" + 
+					"                    hit\r\n" + 
+					"        FROM (\r\n" + 
+					"            SELECT *\r\n" + 
+					"            FROM  board\r\n" + 
+					"            ORDER BY bno DESC  ) \r\n" + 
+					")where rn > ? and rn <= ? ";
 			try {
 				conn = ds.getConnection();
-				pstmt = conn.prepareStatement(sql); //sql 불러옴
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, (pageNum -1 )* amount );//(페이지번호-1) * 데이터 갯수
+				pstmt.setInt(2, pageNum * amount);
 				rs = pstmt.executeQuery(); 
 				
 				while (rs.next()) {
@@ -103,23 +152,40 @@ public class BoardDAO {
 					BoardVO vo = new BoardVO(bno, writer, title, content, regdate, hit);
 					
 					list.add(vo); //리스트에 담아주기
-					
 				}
-			
 				
 			} catch (Exception e) {
 				System.out.println("글 조회 오류");
 				e.printStackTrace();
+			} finally {
+				JdbcUtil.close(conn, pstmt, rs);
+			}
+			return list;
+		}
+		
+		//전체 게시글 수 
+		public int getTotal() {
+			int total = 0;
+			
+			String sql = "SELECT count(*)  as total FROM board ";
+			try {
+				conn = ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				rs= pstmt.executeQuery();
 				
+				if(rs.next()) {
+					total =rs.getInt("total");
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
 			} finally {
 				JdbcUtil.close(conn, pstmt, rs);
 			}
 			
-			
-			return list;
-			
-			
+			return total;
 		}
+		
 		
 		//상세보기
 		public BoardVO getContent (String bno) {
@@ -162,10 +228,99 @@ public class BoardDAO {
 			return vo ;
 		}
 		
+		//글 수정 업데이트 메서드 	
+		/*
+		public BoardVO update(String bno, String title, String content) {
+			
+			BoardVO vo = new BoardVO();
+			
+			String sql = "update board set title = ? , content = ? where bno = ?";			
+			
+			try {
+				conn = ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, title);
+				pstmt.setString(2, content);
+				pstmt.setString(3, bno);
+				
+				pstmt.executeUpdate(); 
+				//rs는 1또는 0인 값을 리턴해주기에 사용하지 않음
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				JdbcUtil.close(conn, pstmt, rs);
+			}
+			
+			
+			return getContent(bno); 
+			//상세보기 getContent 메서드들로 번호를 다시 보내서
+			// getContent 메서드를 다시 실행 -> vo를 리턴
+		}
+		*/
 		
 		
+		public void update(String bno, String title, String content) {
+					
+			String sql = "update board set title = ? , content = ? where bno = ?";			
+			
+			try {
+				conn = ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, title);
+				pstmt.setString(2, content);
+				pstmt.setString(3, bno);
+				
+				pstmt.executeUpdate(); 
+				//rs는 1또는 0인 값을 리턴해주기에 사용하지 않음
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				JdbcUtil.close(conn, pstmt, rs);
+			}
+			
+		}
 		
 		
+		//삭제
+		public void delete(String bno) {
+			String sql = "delete from board WHERE bno = ?";
+			
+			try {
+				conn=ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, bno );
+				
+				pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				JdbcUtil.close(conn, pstmt, rs);
+			}
+			
+		}
+		
+		//조회수 업데이트 메서드
+		public void upHit (String bno){
+			
+			String sql ="update board set hit = hit+1 where bno = ? ";
+			
+			try {
+				conn= ds.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, bno );
+				
+				pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				System.out.println("조회 수 오류");
+				e.printStackTrace();
+			} finally {
+				JdbcUtil.close(conn, pstmt, rs);
+			}
+		}
 		
 		
 		

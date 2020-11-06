@@ -17,9 +17,9 @@
    %>
    <section>
    	<div align="center">
-   		<h3><%=id %>(<%=name %>)님이 로그인 중입니다.</h3>
-   		<a href="update.jsp">[정보수정]</a>
-   		<a href="delete.jsp">[회원탈퇴]</a>   		
+   		<h3>${sessionScope.user.id}(${sessionScope.user.name})님이 로그인 중입니다.</h3>
+   		<a href="update.user">[정보수정]</a>
+   		<a href="delete.user">[회원탈퇴]</a>   		
    	</div>
    </section> 
     

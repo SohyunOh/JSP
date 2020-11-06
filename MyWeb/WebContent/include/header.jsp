@@ -71,18 +71,18 @@
                     <c:choose>
                     	<c:when test="${sessionScope.user == null}">
                     	     <li>
-		                        <a href="${pageContext.request.contextPath}/user/login.jsp">LOGIN</a>
+		                        <a href="${pageContext.request.contextPath}/user/login.user">LOGIN</a>
 		                    </li>
 		                    <li>
-		                        <a href="${pageContext.request.contextPath}/user/join.jsp" style="color:red">JOIN</a>
+		                        <a href="${pageContext.request.contextPath}/user/join.user" style="color:red">JOIN</a>
 		                    </li>
 		                  </c:when>
                     	<c:otherwise>
                     		<li>
-		                        <a href="${pageContext.request.contextPath}/user/logout.jsp">LOGOUT</a>
+		                        <a href="${pageContext.request.contextPath}/user/logout.user">LOGOUT</a>
 		                    </li>
 		                    <li>
-		                        <a href="${pageContext.request.contextPath}/user/mypage.jsp">MYPAGE</a>
+		                        <a href="${pageContext.request.contextPath}/user/mypage.user">MYPAGE</a>
 		                    </li>
                     	</c:otherwise>
                     </c:choose>

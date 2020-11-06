@@ -20,12 +20,12 @@
 		<h2>회원정보 연습</h2>
 		<hr/>
 		<!--  수정 경로 -->
-		<form action="update_ok.jsp" method="post" name="regForm">
+		<form action="updateForm.user" method="post" name="regForm">
 		
 			<table>
 				<tr>
 					<td>아이디 </td> <!-- 아이디는 수장되면 안됨.  disabled 는 요청으로 값이 안넘어감 readonly는 값이 넘어감-->
-					<td><input type="text" name="id" value="<%= id %>" readonly ></td>
+					<td><input type="text" name="id" value="${sessionScope.user.id}" readonly ></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
@@ -37,15 +37,15 @@
 				</tr>
 				<tr>
 					<td>이름:</td>
-					<td><input type="text" name="name" value= "<%=name%>"></td>
+					<td><input type="text" name="name" value= "${sessionScope.user.name}"></td>
 				</tr>
 				<tr>
 					<td>이메일: </td>
-					<td><input type="text" name="email" value="<%= email%>"></td>
+					<td><input type="text" name="email" value="${sessionScope.user.email}"></td>
 				</tr>
 				<tr>
 					<td>주소:</td>
-					<td><input type="text" name="address" value="<%= address%>" ></td>
+					<td><input type="text" name="address" value="${sessionScope.user.address}" ></td>
 				</tr>
 			</table>
 			<input type="button" value="수정" class="btn btn-default" onclick="check()">

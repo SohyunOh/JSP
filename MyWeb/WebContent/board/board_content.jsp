@@ -47,9 +47,11 @@
 			<td colspan="4" align="center">
 				<input type="button" value="목록" onclick="location.href='list.board' ">&nbsp;&nbsp;
 				<%-- 컨트롤러를 타고 목록으로 이동 --%>
-				<input type="button" value="수정" onclick= "location.href='modify.board?bno=${vo.bno}' ">&nbsp;&nbsp;
+				<input type="button" value="수정" onclick= "location.href='modify.board?bno=${vo.bno}&writer=${vo.writer }'">&nbsp;&nbsp;
 				<%--커트롤러로가는데 bno를 필요로 하기에 같이 실어서 보내주기 --%>
-				<input type="button" value="삭제">&nbsp;&nbsp;
+				<input type="button" value="삭제" onclick="location.href='delete.board?bno=${vo.bno}&writer=${vo.writer }'">&nbsp;&nbsp;
+				<%-- onclick="location.href='delete.board?bno=${vo.bno}'" -- get방식으로 값보내기--%>
+				
 			</td>
 		</tr>
 	</table>

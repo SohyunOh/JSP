@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myweb.board.model.BoardDAO;
 
-public class RegistSerViceImpl implements BoardService {
+public class RegistServiceImpl implements BoardService {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

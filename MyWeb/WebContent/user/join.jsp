@@ -6,7 +6,7 @@
 		<h2>회원가입 연습</h2>
 		<hr/>
 		
-		<form action="join_ok.jsp" method="post" name="regForm">
+		<form action="joinFrom.user" method="post" name="regForm">
 		
 			<table>
 				<tr>
@@ -34,6 +34,8 @@
 					<td><input type="text" name="address" ></td>
 				</tr>
 			</table>
+			<br/>
+			<p>${msg }</p>			
 			<input type="button" value="가입" class="btn btn-default" onclick="check()">
 			<%-- on으로 시작하는건 동작을 의미하는 이벤트 --%>  
 			<input type="button" value="로그인" class="btn btn-primary" onclick="location.href='login.jsp' ">

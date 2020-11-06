@@ -3,18 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../include/header.jsp" %>
 
-<style>
-	.btn {
-          
-	border: 0; 
-	border-radius: 0; /*윤곽 0*/
-	padding: 5px 10px; 
-	margin: 20px 0px;
-        }
-</style>
 
 <%-- boby는   header 파일에서 부터 시작됨   --%>
-
 
 <div align="center" class="div_center">
 	<h3>게시판 글 작성 페이지</h3>
@@ -25,7 +15,7 @@
 			<tr>
 				<td>작성자</td>
 				<td>
-					<input type="text" name="writer" size="10">
+					<input type="text" name="writer" value="${sessionScope.user.name}" size="10" required>
 				</td>
 			</tr>
 			<tr>
