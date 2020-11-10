@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <style type="text/css">
     </style>
@@ -15,23 +14,23 @@
                         MEMBER                   
                     </div>
                     <div>
-                        <p>${sessionScope.user.id(${sessionScope.user.neme})}님 회원정보</p>
+                        <p>${sessionScope.user.id}님 회원정보</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary" onclick="update.user">회원정보변경</button>
+                        <button type="button" class="btn btn-primary" onclick="user_mypageinfo.user">회원정보변경</button>
                         <button type="button" class="btn btn-primary" id="delCheck" onclick="delete.user">회원 탈퇴</button>
-                        
+                        <p>${msg }</p>
                     </div>
                     <div class="delete-hidden" >
                         <form>
                         <input type="password" class="form-control" placeholder="비밀번호를 입력하세요">
-                        <button type="button" class="btn btn-primary" >확인</button>
+                        <button type="button" class="btn btn-primary" onclick="delete.user">확인</button>
                         </form>
                     </div>
                     
                     <br>
                     <div>
-                        <p>${sessionScope.user.neme}님의 작성 게시물</p>
+                        <p>${sessionScope.user.id}님의 작성 게시물</p>
                         <table class="table table-striped" style="text-align: center; border: 2px solid #737373">
                     <thead>
                         <tr>

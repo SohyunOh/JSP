@@ -56,10 +56,6 @@ public class UserController extends HttpServlet {
 		if(command.equals("/user/join.user")) {
 			request.getRequestDispatcher("user_join.jsp").forward(request, response);
 			
-			
-		} else if (command.equals("/user/login.user")) { //로그인 화면처리
-			request.getRequestDispatcher("user_login.jsp").forward(request, response);
-				
 		
 		
 		}else if (command.equals("/user/joinFrom.user")) { //회원가입 요청
@@ -75,10 +71,13 @@ public class UserController extends HttpServlet {
 				response.sendRedirect("/user/login.user");
 				
 			}
-		}
+			
+			
+		} else if (command.equals("/user/login.user")) { //로그인 화면처리
+			request.getRequestDispatcher("user_login.jsp").forward(request, response);
+				
 		
-		
-		else if (command.equals("/user/loginForm.user")) {//로그인화면처리	
+		}else if (command.equals("/user/loginForm.user")) {//로그인 처리	
 			service = new UserLoginServiceImpl();
 			int result  = service.execute(request, response);
 			
@@ -92,22 +91,12 @@ public class UserController extends HttpServlet {
 		} else if(command.equals("/user/user_mypage.user")) { //마이페이지 화면처리 
 			request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
 		
-		} else if (command.equals("/user/user_logout.user")) {//로그아웃
-			HttpSession session = request.getSession();
-			session.invalidate(); // 무효화 
-			
-			response.sendRedirect(request.getContextPath());//홈화면으로
-			
-		}else if (command.equals("/user/update.user")) { //수정화면 이동
+		}else if (command.equals("/user/mypageinfo.user")) { //수정화면 이동
 			//세션에 값이 들어있음.
-			request.getRequestDispatcher("update.jsp").forward(request, response);
+			request.getRequestDispatcher("user_mypageinfo.jsp").forward(request, response);
 			
 		} else if(command.equals("/user/updateForm.user")) {
-			/*
-			 * 1. UserUpdateServiceImpl() 생성호출
-			 * 2. execute메서드에서는 update()메서드 실행
-			 * 
-			 */
+		
 			service = new UserUpdateServiceImpl();
 			int result = service.execute(request, response);
 			
@@ -120,20 +109,11 @@ public class UserController extends HttpServlet {
 				out.println("location.href='mypage.jsp';");
 				out.println("</script>");
 			}else {//실패0
-				response.sendRedirect("mypage.user");//실패시 마이페이지로
+				response.sendRedirect("user_mypage.user");//실패시 마이페이지로
 			}
-					
-		}else if (command.equals("/user/delete.user")) {//삭제화면 요청
-			request.getRequestDispatcher("delete.jsp").forward(request, response);
 		
 		}else if (command.equals("/user/deleteForm.user")) {//회원탈퇴요청
-			/*
-			 * 1.UserDeleteServiceImpl() 로 생성, 연결
-			 * 2.delete() 메서드를 통해 삭제 처리
-			 * 3. 성공실패결과를 컨트로롤러로 받아와서 성공시엔, 세션삭제후 홈화면으로 리다이렉트
-			 * 4. 실패시엔 실패메시지를 delete.jsp로 처리해주세요
-			 */
-			
+					
 			service = new UserDeleteServiceImpl();
 			int result = service.execute(request, response);
 			
@@ -142,7 +122,7 @@ public class UserController extends HttpServlet {
 			
 			}else { //실패
 				request.setAttribute("msg", "비밀번호를 확인하세요");
-				request.getRequestDispatcher("delete.jsp").forward(request, response);
+				request.getRequestDispatcher("user_delete.jsp").forward(request, response);
 			}
 			
 			
