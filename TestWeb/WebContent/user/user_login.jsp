@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
 
     <!--login만 적용되는 css-->   
     <style>
@@ -25,29 +25,39 @@
                     <h2>로그인<small>(가운데정렬)</small></h2>
                     
                     
-                    <form action="">
+                    <form action="loginForm.user" method="post" name="regForm">
                         <div class="form-group">
                             <label for="id">아이디</label>
-                            <input type="text" class="form-control" id="id" placeholder="아이디">
+                            <input type="text" class="form-control" id="id" name="id" placeholder="아이디">
                         </div>
                         <div class="form-group">
                             <label for="password">비밀번호</label>
-                            <input type="password" class="form-control" id="password" placeholder="비밀번호 ">
+                            <input type="password" class="form-control" id="password" name="pw" placeholder="비밀번호 ">
                         </div>
                         
                         <div class="form-group">
-                            <button type="button" class="btn btn-lg btn-success btn-block">회원가입</button>
+                            <input type="button" class="btn btn-lg btn-success btn-block" value="회원가입" onclick="location.href='join.user'">
                         </div>
-
+			
                         <div class="form-group">
-                            <button type="button" class="btn btn-lg btn-info btn-block">로그인</button>
+                            <input type="button" class="btn btn-lg btn-info btn-block" value="로그인" onclick="login()" />
                         </div>
+                    
+                    <span>${msg}</span>
                     </form>
                 </div>
             </div>
         </div>
+        
+ <!-- 버튼 타입은 스크립트 함수를 활용해서 보내주기  -->
+<script type="text/javascript">
+	function login() {
+		document.regForm.submit();
+	}
+</script>
+
+</section>
 
 
-    </section>
 
-<%@ include file="include/footer.jsp" %>
+<%@ include file="../include/footer.jsp" %>

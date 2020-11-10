@@ -1,0 +1,16 @@
+CREATE TABLE testuser (
+   "ID" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+	"PW" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(30 BYTE) NOT NULL ENABLE, 
+	"PHONE" VARCHAR2 (20 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"ADDRESS" VARCHAR2(50 BYTE), 
+	"ADDRESSINFO" VARCHAR2(100 BYTE),
+    "regdate" DATE DEFAULT sysdate
+);
+ALTER TABLE testuser add CONSTRAINT testusers_pk PRIMARY KEY (id);
+
+ INSERT INTO testuser VALUES ('aaa123', 'aaa123' , '홍길자', '01012345678', 'aaa123@naver.com' , '서울', '강남구', sysdate );
+ SELECT
+    *
+FROM testuser;
