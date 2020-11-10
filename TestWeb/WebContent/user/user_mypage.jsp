@@ -17,14 +17,14 @@
                         <p>${sessionScope.user.id}님 회원정보</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary" onclick="user_mypageinfo.user">회원정보변경</button>
-                        <button type="button" class="btn btn-primary" id="delCheck" onclick="delete.user">회원 탈퇴</button>
+                        <button type="button" class="btn btn-primary" onclick="location.href='mypageinfo.user'">회원정보변경</button>
+                        <button type="button" class="btn btn-primary" id="delCheck" onclick="delete-hidden">회원 탈퇴</button>
                         <p>${msg }</p>
                     </div>
                     <div class="delete-hidden" >
                         <form>
                         <input type="password" class="form-control" placeholder="비밀번호를 입력하세요">
-                        <button type="button" class="btn btn-primary" onclick="delete.user">확인</button>
+                        <button type="button" class="btn btn-primary" onclick="location.href='delete.user'">확인</button>
                         </form>
                     </div>
                     
