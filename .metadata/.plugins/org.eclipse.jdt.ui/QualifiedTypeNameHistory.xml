@@ -55,9 +55,9 @@
 <fullyQualifiedTypeName name="com.testweb.util.filter.JdbcUtil"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserService"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserJoinServiceImpl"/>
-<fullyQualifiedTypeName name="com.testweb.user.model.UserDAO"/>
-<fullyQualifiedTypeName name="com.testweb.user.model.UserVO"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserLoginServiceImpl"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserDeleteServiceImpl"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserUpdateServiceImpl"/>
+<fullyQualifiedTypeName name="com.testweb.user.model.UserVO"/>
+<fullyQualifiedTypeName name="com.testweb.user.model.UserDAO"/>
 </qualifiedTypeNameHistroy>
