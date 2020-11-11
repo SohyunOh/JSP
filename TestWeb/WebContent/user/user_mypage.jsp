@@ -14,7 +14,7 @@
                         MEMBER                   
                     </div>
                     <div>
-                        <p>${sessionScope.user.id}님 회원정보</p>
+                        <p>${sessionScope.user.id}(${sessionScope.user.name})님 회원정보</p>
                     </div>
                     <div>
                         <button type="button" class="btn btn-primary" onclick="location.href='mypageinfo.user'">회원정보변경</button>
@@ -22,9 +22,9 @@
                         <p>${msg }</p>
                     </div>
                     <div class="delete-hidden" >
-                        <form >
-                        <input type="password" class="form-control" placeholder="비밀번호를 입력하세요">
-                        <button type="button" class="btn btn-primary" onclick="location.href='delete.user'">확인</button>
+                        <form action="deleteForm.user" method="post" name="regForm">
+                        	<input type="password" class="form-control" placeholder="비밀번호를 입력하세요" name="pw">
+                        	<button type="button" class="btn btn-primary" onclick="delete_btn()">확인</button>
                         </form>
                     </div>
                     
@@ -67,9 +67,14 @@
         </div>
 
     </section>
-    
    
-    <script>
+   <script type="text/javascript" >
+   	function delete_btn() {
+		document.regForm.submit();
+	}
+   </script> 
+   
+  <script>
         //탈퇴버튼 디스플레이 처리
         var delCheck = document.getElementById("delCheck");
         delCheck.onclick = function() {

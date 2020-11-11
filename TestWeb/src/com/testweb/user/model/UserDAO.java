@@ -153,7 +153,7 @@ public class UserDAO {
 		//수정 
 		public int update(UserVO vo) {
 			int result = 0;
-			String sql = "UPDATE testuser set pw = ? , name = ? , email= ?, address = ? where id = ?";
+			String sql = "UPDATE testuser set pw = ? , name = ? , phone = ? ,email= ?, address = ? addressinfo = ?where id = ?";
 			
 			try {
 				//연결
@@ -164,9 +164,11 @@ public class UserDAO {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, vo.getPw());
 				pstmt.setString(2, vo.getName());
-				pstmt.setString(3, vo.getEmail());
-				pstmt.setString(4, vo.getAddress());
-				pstmt.setString(5, vo.getId());
+				pstmt.setString(3, vo.getPhone());
+				pstmt.setString(4, vo.getEmail());
+				pstmt.setString(5, vo.getAddress());
+				pstmt.setString(6, vo.getAddressinfo());
+				pstmt.setString(7, vo.getId());
 				
 				//성공시 1, 실패시 0
 				result = pstmt.executeUpdate();
@@ -183,7 +185,7 @@ public class UserDAO {
 		}
 		
 		//회원 탈퇴
-		public int delede (String id) {
+		public int delete(String id) {
 			int result = 0;
 			String sql = "DELETE FROM testuser where id = ? " ; 
 			

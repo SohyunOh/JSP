@@ -15,18 +15,19 @@ public class UserDeleteServiceImpl implements UserService {
 
 		//비밀번호는 화면에서 넘어옵니다.
 				String pw = request.getParameter("pw");
+				System.out.println(pw);
 				//아이디는 세션
 				HttpSession session = request.getSession();
 				UserVO vo = (UserVO)session.getAttribute("user");
 				String id =vo.getId();
-				
+				System.out.println(id);
 				//1. login메서드로 유효성 확인		
 				UserDAO dao = UserDAO.getInstance();
 				UserVO result = dao.login(id, pw); //실패시 null반환
 				
 				
 				if(result != null) { //비밀번호가 맞는 경우 (회원탈퇴진행)
-					dao.delede(id); //삭제라고 가정
+					dao.delete(id); //삭제라고 가정
 					session.invalidate();
 					return 1;
 				}else {

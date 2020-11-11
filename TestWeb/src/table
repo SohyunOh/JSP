@@ -14,3 +14,21 @@ ALTER TABLE testuser add CONSTRAINT testusers_pk PRIMARY KEY (id);
  SELECT
     *
 FROM testuser;
+
+
+
+--테이블
+CREATE table testboard(
+    bno NUMBER(10,0) not null,
+    writer varchar2(50) not null,
+    title VARCHAR2(200) not null,
+    content VARCHAR2(2000),
+    regdate date DEFAULT sysdate
+);
+ALTER TABLE testboard add CONSTRAINT testboard_pk PRIMARY KEY (bno);
+CREATE SEQUENCE testboard_seq START WITH 1 INCREMENT BY 1 NOCACHE;
+
+SELECT
+    *
+FROM testboard;
+

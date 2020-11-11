@@ -14,17 +14,16 @@ public class UserLoginServiceImpl implements UserService {
 	public int execute(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");		
-		System.out.println(id);
-		System.out.println(pw);
-		
 		
 		UserDAO dao = UserDAO.getInstance();
 		UserVO user = dao.login(id, pw);
+		
 		
 		if(user != null) { //로그인 성공
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 			return 1;
+			
 		} else { //로그인 실패
 			return 0;		
 		}

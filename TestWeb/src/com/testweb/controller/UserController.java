@@ -55,8 +55,6 @@ public class UserController extends HttpServlet {
 		//회원가입 화면 처리
 		if(command.equals("/user/join.user")) {
 			request.getRequestDispatcher("user_join.jsp").forward(request, response);
-			
-		
 		
 		}else if (command.equals("/user/joinFrom.user")) { //회원가입 요청
 			
@@ -87,6 +85,7 @@ public class UserController extends HttpServlet {
 				request.setAttribute("msg",  "아이디 비밀번호를 확인하세요");
 				request.getRequestDispatcher("user_login.jsp").forward(request, response);
 			}
+			
 						
 		} else if(command.equals("/user/user_mypage.user")) { //마이페이지 화면처리 
 			request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
@@ -112,13 +111,13 @@ public class UserController extends HttpServlet {
 				response.sendRedirect("user_mypage.user");//실패시 마이페이지로
 			}
 		
-		}else if (command.equals("/user/delet.user")) {//회원탈퇴요청
+		}else if (command.equals("/user/deleteForm.user")) {//회원탈퇴요청
 					
 			service = new UserDeleteServiceImpl();
 			int result = service.execute(request, response);
 			
 			if(result == 1) {//회원탈퇴성공
-			response.sendRedirect(request.getContextPath());
+				response.sendRedirect("login.user");
 			
 			}else { //실패
 				request.setAttribute("msg", "비밀번호를 확인하세요");

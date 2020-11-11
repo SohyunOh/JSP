@@ -15,13 +15,20 @@ public class UserUpdateServiceImpl implements UserService {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
+		String Allphone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String address = request.getParameter("adress");
 		String addressinfo = request.getParameter("adressinfo");
-
 		
-		UserVO vo = new UserVO(id, pw, name, phone, email, address,addressinfo, null);
+		
+//		String[] phone = Allphone.split("-");
+//		String ph1 = phone[0];
+//		String ph2 = phone[1];
+//		String ph3 = phone[2];
+//		String[] emails =  Allemail.split("@");
+//		String email  = emails[0];  
+		
+		UserVO vo = new UserVO(id, pw, name, Allphone, email, address, addressinfo, null);
 		UserDAO dao = UserDAO.getInstance();
 		int result =  dao.update(vo);
 		
