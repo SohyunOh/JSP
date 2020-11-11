@@ -22,7 +22,7 @@
                         <p>${msg }</p>
                     </div>
                     <div class="delete-hidden" >
-                        <form>
+                        <form >
                         <input type="password" class="form-control" placeholder="비밀번호를 입력하세요">
                         <button type="button" class="btn btn-primary" onclick="location.href='delete.user'">확인</button>
                         </form>

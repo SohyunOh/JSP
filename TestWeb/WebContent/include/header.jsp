@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<%=request.getContextPath() %>" style="margin-right: 10px;">메인</a></li>
-                <li><a href="bbs.jsp">게시판</a></li>
+                <li><a href="<%=request.getContextPath() %>/board/bbs.jsp">게시판</a></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">

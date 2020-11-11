@@ -63,8 +63,8 @@
                     </table>
                     
                     <div class="titlefoot">
-                        <button class="btn">수정</button>
-                        <button class="btn">목록</button>
+                        <button class="btn" onclick="">수정</button>
+                        <button class="btn" onclick="mypage.user">목록</button>
                     </div>
                     
                 </div>

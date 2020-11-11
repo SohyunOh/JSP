@@ -112,7 +112,7 @@ public class UserController extends HttpServlet {
 				response.sendRedirect("user_mypage.user");//실패시 마이페이지로
 			}
 		
-		}else if (command.equals("/user/deleteForm.user")) {//회원탈퇴요청
+		}else if (command.equals("/user/delet.user")) {//회원탈퇴요청
 					
 			service = new UserDeleteServiceImpl();
 			int result = service.execute(request, response);
@@ -122,7 +122,7 @@ public class UserController extends HttpServlet {
 			
 			}else { //실패
 				request.setAttribute("msg", "비밀번호를 확인하세요");
-				request.getRequestDispatcher("user_delete.jsp").forward(request, response);
+				request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
 			}
 			
 			
