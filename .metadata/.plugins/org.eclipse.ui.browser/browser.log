@@ -93,3 +93,26 @@
 11월 12, 2020 18:27:12.776 [12780:12588:1112/182712.776:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
 11월 12, 2020 18:27:13.875 [12780:12588:1112/182713.875:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
 11월 12, 2020 18:27:14.961 [12780:12588:1112/182714.961:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:31.352 [12780:12588:1112/182931.352:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:32.398 [12780:12588:1112/182932.398:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:34.01 [12780:12588:1112/182934.001:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:36.282 [12780:12588:1112/182936.282:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:37.527 [12780:12588:1112/182937.527:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:38.725 [12780:12588:1112/182938.725:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:39.740 [12780:12588:1112/182939.740:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:41.518 [12780:12588:1112/182941.518:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:42.598 [12780:12588:1112/182942.598:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:43.750 [12780:12588:1112/182943.750:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:53.993 [12780:12588:1112/182953.993:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:29:55.167 [12780:12588:1112/182955.167:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:20.681 [12780:12588:1112/183020.681:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:21.740 [12780:12588:1112/183021.740:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:22.758 [12780:12588:1112/183022.758:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:23.776 [12780:12588:1112/183023.775:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:24.787 [12780:12588:1112/183024.787:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:25.789 [12780:12588:1112/183025.789:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:26.795 [12780:12588:1112/183026.795:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:27.808 [12780:12588:1112/183027.808:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:28.809 [12780:12588:1112/183028.809:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:30:29.43 [12780:12588:1112/183029.043:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:37:57.707 [6472:8716:1112/183757.707:ERROR:device_event_log_impl.cc(208)] [18:37:57.707] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.

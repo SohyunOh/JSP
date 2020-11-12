@@ -34,7 +34,7 @@ public class UserUpdateServiceImpl implements UserService {
 		int result =  dao.update(vo);
 		
 	
-		return result;
+		return result; 
 		
 	
 	}

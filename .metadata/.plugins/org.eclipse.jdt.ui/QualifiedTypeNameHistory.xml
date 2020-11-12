@@ -50,7 +50,6 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="com.testweb.util.filter.JdbcUtil"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserService"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserJoinServiceImpl"/>
 <fullyQualifiedTypeName name="com.testweb.user.service.UserLoginServiceImpl"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.testweb.user.model.UserDAO"/>
 <fullyQualifiedTypeName name="com.myweb.user.model.UserDAO"/>
 <fullyQualifiedTypeName name="com.myweb.user.model.UserVO"/>
+<fullyQualifiedTypeName name="com.testweb.util.filter.JdbcUtil"/>
 </qualifiedTypeNameHistroy>
