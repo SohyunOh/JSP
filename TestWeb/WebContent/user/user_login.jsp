@@ -28,19 +28,19 @@
                     <form action="loginForm.user" method="post" name="regForm">
                         <div class="form-group">
                             <label for="id">아이디</label>
-                            <input type="text" class="form-control" id="id" name="id" placeholder="아이디" required >
+                            <input type="text" class="form-control" id="id" name="id" placeholder="아이디">
                         </div>
                         <div class="form-group">
                             <label for="password">비밀번호</label>
-                            <input type="password" class="form-control" id="password" name="pw" placeholder="비밀번호 " required >
+                            <input type="password" class="form-control" id="password" name="pw" placeholder="비밀번호 ">
                         </div>
                         
                         <div class="form-group">
-                            <button type="button" class="btn btn-lg btn-success btn-block" onclick="location.href='join.user'">회원가입</button>
+                            <input type="button" class="btn btn-lg btn-success btn-block" value="회원가입" onclick="location.href='join.user'">
                         </div>
 			
                         <div class="form-group">
-                            <button type="submit" class="btn btn-lg btn-info btn-block" >로그인</button>
+                            <input type="button" class="btn btn-lg btn-info btn-block" value="로그인" onclick="login()" />
                         </div>
                     
                     <span>${msg}</span>
@@ -49,6 +49,13 @@
             </div>
         </div>
         
+ <!-- 버튼 타입은 스크립트 함수를 활용해서 보내주기  -->
+<script type="text/javascript">
+	function login() {
+		document.regForm.submit();
+	}
+</script>
+
 </section>
 
 

@@ -153,10 +153,11 @@ public class UserDAO {
 		//수정 
 		public int update(UserVO vo) {
 			int result = 0;
-			String sql = "UPDATE testuser set pw = ? , name = ? , phone = ? ,email= ?, address = ? addressinfo = ? where id = ?";
+			String sql = "UPDATE testuser set pw = ? , name = ? , phone = ? ,email= ?, address = ? addressinfo = ?where id = ?";
 			
 			try {
 				//연결
+//				conn = DriverManager.getConnection(url, uid, upw);
 				conn=ds.getConnection();
 				
 				//pstmt 생성 -- spl 전달 
