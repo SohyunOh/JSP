@@ -35,7 +35,6 @@
 <fullyQualifiedTypeName name="com.myweb.user.service.UserLoginServiceImpl"/>
 <fullyQualifiedTypeName name="com.myweb.user.service.UserUpdateServiceImpl"/>
 <fullyQualifiedTypeName name="java.io.DataOutput"/>
-<fullyQualifiedTypeName name="com.myweb.user.model.UserDAO"/>
 <fullyQualifiedTypeName name="com.myweb.user.service.UserDeleteServiceImpl"/>
 <fullyQualifiedTypeName name="javax.websocket.Session"/>
 <fullyQualifiedTypeName name="java.util.logging.Filter"/>
@@ -44,7 +43,6 @@
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.myweb.user.model.UserVO"/>
 <fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.testweb.user.service.UserUpdateServiceImpl"/>
 <fullyQualifiedTypeName name="com.testweb.user.model.UserVO"/>
 <fullyQualifiedTypeName name="com.testweb.user.model.UserDAO"/>
+<fullyQualifiedTypeName name="com.myweb.user.model.UserDAO"/>
+<fullyQualifiedTypeName name="com.myweb.user.model.UserVO"/>
 </qualifiedTypeNameHistroy>

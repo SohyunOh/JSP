@@ -157,7 +157,6 @@ public class UserDAO {
 			
 			try {
 				//연결
-//				conn = DriverManager.getConnection(url, uid, upw);
 				conn=ds.getConnection();
 				
 				//pstmt 생성 -- spl 전달 

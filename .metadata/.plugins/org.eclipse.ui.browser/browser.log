@@ -81,3 +81,15 @@
 11월 11, 2020 17:16:49.400 NEW SESSION
 11월 11, 2020 17:16:49.400 [25420:41044:1111/171649.377:ERROR:device_event_log_impl.cc(208)] [17:16:49.376] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.
 11월 11, 2020 17:26:42.953 [1111/172642.951:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+11월 12, 2020 17:44:42.752 NEW SESSION
+11월 12, 2020 17:44:42.752 [13076:13288:1112/174442.744:ERROR:device_event_log_impl.cc(208)] [17:44:42.744] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.
+11월 12, 2020 17:54:39.361 [1112/175439.360:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+11월 12, 2020 18:03:02.991 [12780:12588:1112/180302.990:ERROR:device_event_log_impl.cc(208)] [18:03:02.990] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.
+11월 12, 2020 18:12:55.631 [1112/181255.630:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+11월 12, 2020 18:27:09.258 [12780:12588:1112/182709.258:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:27:10.266 [12780:12588:1112/182710.266:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:27:11.534 [12780:12588:1112/182711.533:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:27:12.776 [12780:12588:1112/182712.776:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:27:13.875 [12780:12588:1112/182713.875:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
+11월 12, 2020 18:27:14.961 [12780:12588:1112/182714.961:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
