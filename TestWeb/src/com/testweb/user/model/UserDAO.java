@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import com.testweb.util.filter.JdbcUtil;
+import com.testweb.util.JdbcUtil;
 
 public class UserDAO {
 	
@@ -45,7 +45,8 @@ public class UserDAO {
 		
 		int result = 0;
 		
-		String sql = "INSERT INTO testuser (id,pw,name,phone,email,address,addressinfo) VALUES (?,?,?,?,?,?,?) ";
+		String sql = "INSERT INTO testuser (id,pw,name,ph1,ph2,ph3,email,email2,address,addressinfo) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?) ";
 		
 		try {
 			conn = ds.getConnection();
@@ -53,10 +54,13 @@ public class UserDAO {
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPw());
 			pstmt.setString(3, vo.getName());
-			pstmt.setString(4, vo.getPhone());
-			pstmt.setString(5, vo.getEmail());
-			pstmt.setString(6, vo.getAddress());
-			pstmt.setString(7, vo.getAddressinfo());
+			pstmt.setString(4, vo.getPh1());
+			pstmt.setString(5, vo.getPh2());
+			pstmt.setString(6, vo.getPh3());
+			pstmt.setString(7, vo.getEmail());
+			pstmt.setString(8, vo.getEmail2());
+			pstmt.setString(9, vo.getAddress());
+			pstmt.setString(10, vo.getAddressinfo());
 			
 			result = pstmt.executeUpdate(); //결과 여부
 			
@@ -108,7 +112,8 @@ public class UserDAO {
 		public UserVO login(String id, String pw) {
 			UserVO vo = null;
 			
-			String sql = "SELECT * FROM testuser where id = ? and pw = ? ";
+			String sql = "SELECT * FROM testuser "
+							+ "where id = ? and pw = ? ";
 			
 			try {
 				//연결
@@ -131,8 +136,11 @@ public class UserDAO {
 					vo = new UserVO();
 					vo.setId( rs.getString("id") );
 					vo.setName( rs.getString("name"));
-					vo.setPhone (rs.getString("phone"));
+					vo.setPh1 (rs.getString("ph1"));
+					vo.setPh2 (rs.getString("ph2"));
+					vo.setPh3 (rs.getString("ph3"));
 					vo.setEmail( rs.getString("email") );
+					vo.setEmail2( rs.getString("email2") );
 					vo.setAddress( rs.getString("address") );
 					vo.setAddressinfo( rs.getString("addressinfo") );
 					
@@ -153,22 +161,34 @@ public class UserDAO {
 		//수정 
 		public int update(UserVO vo) {
 			int result = 0;
-			String sql = "UPDATE testuser set pw = ? , name = ? , phone = ? ,email= ?, address = ? addressinfo = ?where id = ?";
+			String sql = "update testuser "
+					   + "set pw = ?, "
+						   + "name = ?, "
+						   + "ph1 = ?, "
+						   + "ph2 = ?, "
+						   + "ph3 = ?, "
+						   + "email= ?, "
+						   + "email2= ?, "
+						   + "address = ?, "
+						   + "addressinfo = ? "
+					   + "where id = ?";
 			
 			try {
 				//연결
-//				conn = DriverManager.getConnection(url, uid, upw);
-				conn=ds.getConnection();
+				conn = ds.getConnection();
 				
 				//pstmt 생성 -- spl 전달 
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, vo.getPw());
 				pstmt.setString(2, vo.getName());
-				pstmt.setString(3, vo.getPhone());
-				pstmt.setString(4, vo.getEmail());
-				pstmt.setString(5, vo.getAddress());
-				pstmt.setString(6, vo.getAddressinfo());
-				pstmt.setString(7, vo.getId());
+				pstmt.setString(3, vo.getPh1());
+				pstmt.setString(4, vo.getPh2());
+				pstmt.setString(5, vo.getPh3());
+				pstmt.setString(6, vo.getEmail());
+				pstmt.setString(7, vo.getEmail2());
+				pstmt.setString(8, vo.getAddress());
+				pstmt.setString(9, vo.getAddressinfo());
+				pstmt.setString(10, vo.getId());
 				
 				//성공시 1, 실패시 0
 				result = pstmt.executeUpdate();

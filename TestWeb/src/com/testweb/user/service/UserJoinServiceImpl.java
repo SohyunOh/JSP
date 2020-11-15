@@ -15,8 +15,11 @@ public class UserJoinServiceImpl implements UserService {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String phone = request.getParameter("ph1")+ "-" + request.getParameter("ph2")+ "-" +request.getParameter("ph3");
-		String email = request.getParameter("email") + "@" + request.getParameter("email2");
+		String ph1 = request.getParameter("ph1");
+		String ph2 = request.getParameter("ph2");
+		String ph3 = request.getParameter("ph3");
+		String email = request.getParameter("email");
+		String email2 = request.getParameter("email2");
 		String address = request.getParameter("addr-basic");
 		String addressinfo = request.getParameter("addr-detail");
 		
@@ -35,7 +38,7 @@ public class UserJoinServiceImpl implements UserService {
 				if(result == 1) { //이미 존재하는 회원
 					return 1;
 				} else {
-					UserVO vo = new UserVO (id,pw,name,phone,email, address, addressinfo, null);
+					UserVO vo = new UserVO (id,pw,name,ph1,ph2,ph3,email,email2, address, addressinfo, null);
 					dao.join(vo); //성공이라고 가정 
 					return 0;
 				}

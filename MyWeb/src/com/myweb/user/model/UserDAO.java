@@ -186,7 +186,6 @@ public class UserDAO {
 			//성공시 1, 실패시 0
 			result = pstmt.executeUpdate();
 			
-			
 		} catch (Exception e) {
 			System.out.println("에러발생");
 			e.printStackTrace();

@@ -13,6 +13,7 @@
                     </div>
                     
                     <p>*표시는 필수 입력 표시입니다</p>
+                    <form action="updateForm.user" method="post" name="regform">
                     <table class="table">
                         <tbody class="m-control">
                             <tr>
@@ -34,8 +35,8 @@
                             <tr>
                                 <td class="m-title">*E-mail</td>
                                 <td>
-                                    <input class="form-control input-sm" name="email" value="${sessionScope.user.email}">@
-                                    <select class="form-control input-sm sel" name="email2">
+                                    <input class="form-control input-sm" name="email" value="${sessionScope.user.email }">@
+                                    <select class="form-control input-sm sel" name="email2" value="${sessionScope.user.email2}">
                                         <option>naver.com</option>
                                         <option>gmail.com</option>
                                         <option>daum.net</option>
@@ -46,9 +47,9 @@
                             <tr>
                                 <td class="m-title">*휴대폰</td>
                                 <td>
-                                    <input class="form-control input-sm sel" name="ph1"> -
-                                    <input class="form-control input-sm sel" name="ph2"> -
-                                    <input class="form-control input-sm sel" name="ph3">
+                                    <input class="form-control input-sm sel" name="ph1" value="${sessionScope.user.ph1 }"> -
+                                    <input class="form-control input-sm sel" name="ph2" value="${sessionScope.user.ph2 }"> -
+                                    <input class="form-control input-sm sel" name="ph3" value="${sessionScope.user.ph3}">
                                 </td>
                             </tr>
                             <tr>
@@ -61,10 +62,11 @@
                             </tr>
                         </tbody>
                     </table>
+                    </form>
                     
                     <div class="titlefoot">
-                        <button class="btn" onclick="location.href='update.user'">수정</button>
-                        <button class="btn" onclick="location.href='mypage.user'">목록</button>
+                        <button class="btn"  onclick="update()" >수정</button>
+                        <button type="button" class="btn" onclick="location.href='mypage.user'">목록</button>
                     </div>
                     
                 </div>
@@ -73,7 +75,17 @@
             </div>
 
         </div>
-
+        
+        
+        <script type="text/javascript">
+        function update() {
+			document.regform.submit();
+		}
+        
+        
+        </script>
+        
+<!--  
 <script>
 
 	var idppt = /^[a-z0-9]{4,12}$/;
@@ -114,7 +126,7 @@
 	}
 	
 </script>
-
+-->
     </section>
     
   <%@ include file="../include/footer.jsp" %>
