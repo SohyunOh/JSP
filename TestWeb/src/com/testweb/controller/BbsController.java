@@ -165,12 +165,14 @@ public class BbsController extends HttpServlet {
 				out.println("<script>");
 				out.println("alert('글이 삭제되었습니다');");
 				out.println("location.href='bbs.bbs';");
-				out.println("</script>");
+
 
 			} else {// 실패
 				out.println("<script>");
 				out.println("alert('글이 삭제되지 않았습니다');");
+
 				out.println("location.href='bbs.bbs';");
+
 				out.println("</script>");
 			}
 

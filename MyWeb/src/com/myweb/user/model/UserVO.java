@@ -11,14 +11,9 @@ public class UserVO {
 	private String address;
 	private Timestamp regdate;
 	
-	
-	
 	public UserVO() {
-		// TODO Auto-generated constructor stub
 	}
 
-	
-	
 	public UserVO(String id, String pw, String name, String email, String address, Timestamp regdate) {
 		super();
 		this.id = id;
@@ -28,8 +23,6 @@ public class UserVO {
 		this.address = address;
 		this.regdate = regdate;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -78,18 +71,15 @@ public class UserVO {
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
-
-
-	//toString 오버라이딩 -- 필드값을 빠르게 확인 가능
 	
+	//toString 오버라이딩
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", address=" + address
 				+ ", regdate=" + regdate + "]";
 	}
-	
 
 	
 	
-
+	
 }

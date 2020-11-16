@@ -148,12 +148,16 @@
         <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
         -->
 
+    
+
         <!-- Access log processes all example.
              Documentation at: /docs/config/valve.html
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="JSPBasic" path="/JSPBasic" reloadable="true" source="org.eclipse.jst.jee.server:JSPBasic"/><Context docBase="MyWeb" path="/MyWeb" reloadable="true" source="org.eclipse.jst.jee.server:MyWeb"/><Context docBase="TestWeb" path="/TestWeb" reloadable="true" source="org.eclipse.jst.jee.server:TestWeb"/></Host>
+      <Context docBase="TestWeb" path="/TestWeb" reloadable="true" source="org.eclipse.jst.jee.server:TestWeb"/>
+      <Context docBase="MyWeb" path="/MyWeb" reloadable="true" source="org.eclipse.jst.jee.server:MyWeb"/>
+      </Host>
     </Engine>
   </Service>
 </Server>

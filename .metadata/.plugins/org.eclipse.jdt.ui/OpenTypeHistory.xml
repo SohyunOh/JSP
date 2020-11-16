@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=MyWeb/src&lt;com.myweb.board.service{BoardService.java[BoardService" modifiers="513" timestamp="1605484330000"/>
-<typeInfo handle="=MyWeb/C:\/Program Files\/Java\/jre1.8.0_261\/lib\/rt.jar=/owner.project.facets=/java=/=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.nio.file.attribute(UserDefinedFileAttributeView.class[UserDefinedFileAttributeView" modifiers="1537" timestamp="1597894949639"/>
-<typeInfo handle="=MyWeb/src&lt;com.myweb.user.service{UserService.java[UserService" modifiers="513" timestamp="1605484330000"/>
 <typeInfo handle="=TestWeb/C:\/Program Files\/Java\/jre1.8.0_261\/lib\/rt.jar=/owner.project.facets=/java=/=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.nio.file.attribute(UserPrincipal.class[UserPrincipal" modifiers="1537" timestamp="1597894949639"/>
 <typeInfo handle="=TestWeb/src&lt;com.testweb.user.service{UserService.java[UserService" modifiers="513" timestamp="1604883936000"/>
 </typeInfoHistroy>

@@ -2,24 +2,12 @@ package com.testweb.util.filter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.util.logging.Filter;
 
 import com.testweb.user.model.UserVO;
 
-//1. Filter 인터페이스를 상속하고, doFilter 메서드를 오버라이딩 합니다.
-//2. 필터를 등록하는 방봅 @WebFilter 어노테이션 or Web.xml에 필터 설정
-//3.@WebFilter("/*") - 모든 요청
-//@WebFilter("*.board") //보드로 끝나는 요청은 다 적용
 @WebFilter({"/bbs/write.bbs" , "/bbs/regist.bbs"}) //글 쓰기화면,글 등록시에만 필터걸음
+
 public class Boardfilter implements Filter{
 
 	@Override
@@ -42,7 +30,8 @@ public class Boardfilter implements Filter{
 			PrintWriter out= res.getWriter();
 			out.println("<script>");
 			out.println("alert('로그인이 필요한 서비스입니다')");
-			out.println("location.href='/TestWeb/user/login.user'");//로그인화면
+out.println("location.href='/TestWeb/user/login.user'");//로그인화면
+
 			out.println("</script>");
 			return;//컨트롤러를 실행하디 않음.
 			

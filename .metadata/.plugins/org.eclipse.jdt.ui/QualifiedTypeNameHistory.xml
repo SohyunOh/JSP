@@ -37,7 +37,6 @@
 <fullyQualifiedTypeName name="java.io.DataOutput"/>
 <fullyQualifiedTypeName name="com.myweb.user.service.UserDeleteServiceImpl"/>
 <fullyQualifiedTypeName name="javax.websocket.Session"/>
-<fullyQualifiedTypeName name="java.util.logging.Filter"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.myweb.user.model.UserVO"/>
 <fullyQualifiedTypeName name="com.testweb.util.filter.JdbcUtil"/>
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="java.util.logging.Filter"/>
 </qualifiedTypeNameHistroy>

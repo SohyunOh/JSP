@@ -17,10 +17,15 @@ import com.testweb.user.model.UserVO;
 
 
 
+<<<<<<< HEAD
 
 
 //게시글 수정 삭제
 @WebFilter({"/bbs/modify.bbs","/bbs/update.bbs","/bbs/delete.bbs" })
+=======
+//게시글 수정 삭제
+@WebFilter({"/board/modify.board","/board/update.board","/board/delete.board" })
+>>>>>>> 210accd10466b838310dde349e34f69c13ea6ea7
 public class BoardFilter2 implements Filter{
 
 	@Override
@@ -39,7 +44,11 @@ public class BoardFilter2 implements Filter{
 		UserVO user =(UserVO)session.getAttribute("user");
 		
 		if(user == null) {
+<<<<<<< HEAD
 			res.sendRedirect("TestWeb/user/login.user");
+=======
+			res.sendRedirect("/MyWeb/user/login.user");
+>>>>>>> 210accd10466b838310dde349e34f69c13ea6ea7
 			return;
 		}
 		
@@ -55,7 +64,11 @@ public class BoardFilter2 implements Filter{
 			PrintWriter out= res.getWriter();
 			out.println("<script>");
 			out.println("alert('권한이 없습니다');");
+<<<<<<< HEAD
 			out.println("location.href='TestWeb/user/login.user"); //로그인화면
+=======
+			out.println("location.href='/MyWeb/user/login.user'"); //로그인화면
+>>>>>>> 210accd10466b838310dde349e34f69c13ea6ea7
 			out.println("</script>");
 			return ; // 필터종료
 		}

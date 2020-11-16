@@ -7,30 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
 	<h2>if절 확인하기</h2>
 	<form action="jstl_if.jsp">
-		이름:<input type="text" name="name"> <br/>
-		나이 : <input type="text" name="age"> <br/>
-	
-		<input type="submit" value="확인"> 
-	
+		이름:<input type="text" name="name"><br>
+		나이:	<input type="text" name="age"><br>
+		<input type="submit" value="확인"><br> 
 	</form>
 	
-	<h2>chose절 확인하기</h2>
-	<form action="jstl_chose.jsp">
-		이름:<input type="text" name="name"> <br/>
-		나이 : <input type="text" name="age"> <br/>
-	
-		<input type="submit" value="확인"> 
+		
+	<h2>choose절 확인하기</h2>
+	<form action="jstl_choose.jsp">
+		이름:<input type="text" name="name"><br>
+		나이:<input type="text" name="age"><br>
+		<input type="submit" value="확인"><br> 
 	</form>
 	
 	
-	<h2>chose2절 확인하기</h2>
-	<form action="jstl_chose2.jsp">
-		점수:<input type="text" name="score"> <br/>
-		<input type="submit" name="확인"> <br/>
 	
+	<h2>choose2절 확인하기</h2>
+	<form action="jstl_choose2.jsp">
+		점수:<input type="text" name="score"><br/>
+		<input type="submit" value="확인"><br/>
 	</form>
+	
+	
 </body>
 </html>

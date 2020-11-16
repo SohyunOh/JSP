@@ -3,7 +3,7 @@ package com.myweb.board.model;
 import java.sql.Timestamp;
 
 public class BoardVO {
-	//테이블명과 선언 합니다
+	//테이블명과 동일하게 선언 합니다.
 	private int bno;
 	private String writer;
 	private String title;
@@ -11,9 +11,8 @@ public class BoardVO {
 	private Timestamp regdate;
 	private int hit;
 	
-	
 	public BoardVO() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public BoardVO(int bno, String writer, String title, String content, Timestamp regdate, int hit) {
@@ -73,8 +72,6 @@ public class BoardVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	
-	
 	
 	
 	

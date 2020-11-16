@@ -59,7 +59,9 @@
 					<c:forEach var="vo" items="${list }">
 						<tr>
 							<td>${vo.bno }</td>
+
 							<td><a href="content.bbs?bno=${vo.bno }">${vo.title }</a>
+
 							</td>
 							<td>${vo.writer }</td>
 							<td><fmt:formatDate value="${vo.regdate }"
@@ -82,24 +84,24 @@
 					<li><a href="#">5</a></li>
 					
 					<c:if test="${pageVO.prev }">
-						<li><a
-							href="bbs.bbs?pageNum=${pageVO.startPage - 1}&amount=${pageVO.amount}">이전</a></li>
+						<li><a href="bbs.bbs?pageNum=${pageVO.startPage - 1}&amount=${pageVO.amount}">이전</a></li>
+
 					</c:if>
 					<c:forEach var="num" begin="${pageVO.startPage }"
 						end="${pageVO.endPage }">
-						<li class="${num eq pageVO.pageNum ? 'active' : '' }"><a
-							href="bbs.bbs?pageNum=${num }&amount=${pageVO.amount}">${num }</a>
+						<li class="${num eq pageVO.pageNum ? 'active' : '' }"><a href="bbs.bbs?pageNum=${num }&amount=${pageVO.amount}">${num }</a>
+
 							<%-- 서버에서 넘버를 받음 --%></li>
 					</c:forEach>
 
 					<c:if test="${pageVO.next }">
-						<li><a
-							href="bbs.bbs?pageNum=${pageVO.endPage +1}&amount=${pageVO.amount}">다음</a>
+						<li><a href="bbs.bbs?pageNum=${pageVO.endPage +1}&amount=${pageVO.amount}">다음</a>
+
 						</li>
 					</c:if>
 				</ul>
-				<button type="button" class="btn btn-info pull-right"
-					onclick="location.href='write.bbs'">글쓰기</button>
+				<button type="button" class="btn btn-info pull-right" onclick="location.href='write.bbs'">글쓰기</button>
+
 			</div>
 
 		</div>

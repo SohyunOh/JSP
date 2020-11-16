@@ -1,58 +1,22 @@
---회원테이블
-CREATE TABLE users (
-    id VARCHAR2(30) not null,
-    pw VARCHAR2(30) not null,
-    name VARCHAR2(30) not null,
-    email VARCHAR2(30),
-    address VARCHAR2(100),
-    regdate DATE DEFAULT sysdate
+--회원 테이블--
+create table users (
+    id varchar2(30) not null,
+    pw varchar2(30) not null,
+    name varchar2(30) not null,
+    email varchar2(30),
+    address varchar2(100),
+    regdate date default sysdate
 );
-ALTER TABLE users add CONSTRAINT users_pk PRIMARY KEY (id);
+alter table users add CONSTRAINT users_pk primary key (id);
 
 --게시글 테이블
-CREATE table board(
-    bno NUMBER(10,0) not null,
+create table board(
+    bno number(10,0) not null,
     writer varchar2(50) not null,
-    title VARCHAR2(200) not null,
-    content VARCHAR2(2000),
-    regdate date DEFAULT sysdate,
-    hit NUMBER(10,0) DEFAULT 0
+    title varchar2(200) not null,
+    content varchar2(2000),
+    regdate date default sysdate,
+    hit number(10,0) default 0
 );
-ALTER TABLE board add CONSTRAINT board_pk PRIMARY KEY (bno);
-CREATE SEQUENCE board_seq START WITH 1 INCREMENT BY 1 NOCACHE;
-
-
-// ALTER TABLE [테이블명] add CONSTRAINT [제약 조건 이름]PRIMARY KEY ([필드이름]);
-//시쿼스(유일(UNIQUE)한 값) 생성
-//START WITH : 시퀀스의 시작 값을 지정한다. n을 1로 지정하면 1부터 순차적으로 시퀀스번호가 증가 한다.
-//NCREMENT BY : 시퀀스의 증가 값을 지정한다. n을 2로 하면 2씩 증가한다. START WITH를 1로, INCREMENT BY를 2로 설정하면 1, 3, 5, 7,.. 이렇게 시퀀스 번호가 증가한다.
-//CACHE | NOCACHE : CACHE 여부, 원하는 숫자만큼 미리 만들어 Shared Pool의 Library Cache에 상주시킨다.
-
-
-
-/*
--- 임의 게시물 생성
-declare
-    var1 number := 1;
-BEGIN
-    while var1 <= 300
-    Loop
-        insert into board(bno, writer, title, content) VALUES ( board_seq.nextval, 'test','test','test');
-        insert into board(bno, writer ,title, content) VALUES ( board_seq.nextval, 'admin','admin','admin');
-        insert into board(bno, writer, title, content) VALUES ( board_seq.nextval, 'test02','test02','test02');
-        
-        var1 := var1 + 1;
-    end loop;
-    commit;
-end ;
-*/
-
-
-
--- 인라인뷰
--- 1. 가장 안쪽 셀렉트 구문에서 정렬해서 조회
--- 2. rownum을 구해서 조회
--- 3. rownum로 조건절
-
-
-
+alter table board add constraint board_pk primary key (bno);
+create sequence board_seq start with 1 INCREMENT by 1 nocache;
