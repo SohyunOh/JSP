@@ -99,7 +99,7 @@
 					</c:if>
 				</ul>
 				<button type="button" class="btn btn-info pull-right"
-					onclick="location.href='bbs_write.bbs'">글쓰기</button>
+					onclick="location.href='bbs_modify.bbs'">글쓰기</button>
 			</div>
 
 		</div>

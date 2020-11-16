@@ -1,41 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <!--글쓰기만 적용되는 css-->   
+    <style>
+        .table-striped {
+            text-align: center; 
+            border: 2px solid #737373; 
+        }
+
+        .table-striped>tbody>tr {
+            background-color: #f9f9f9
+        }
+    </style>
+
+
 <%@ include file="../include/header.jsp" %>
 
-     <section>
-        <div class="container">
+    <section>
+        <div class="container" style="margin-top: 5%;">
             <div class="row">
-                <div class="col-lg-8 col-md-10 col-sm-12 join-form">
-                    <h2>게시판 수정<small>(디자인이궁금하세요?)</small></h2>
-
-                    <form action="">
-                        <div class="form-group">
-                            <label>글번호</label>
-                            <input type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label>글쓴이</label>
-                            <input type="text" class="form-control" name="writer" value="${sessionScope.user.name}" size="10" required >
-                        </div>
-                        <div class="form-group">
-                            <label>제목</label>
-                            <input type="text" class="form-control" name="title" placeholder="자유">
-                        </div>
-                        <div class="form-group">
-                            <label>내용</label>
-                            <textarea class="form-control" rows="5"></textarea>
-                        </div>
-
-                        <!--구현로직: 버튼은 온클릭을 사용하던 자바스크립트를 이용해야 합니다-->
-                        <div class="form-group">
-                            <button type="button" class="btn btn-success">목록</button>
-                            <button type="button" class="btn btn-info">수정</button>
-                            <button type="button" class="btn btn-default">삭제</button>
-                        </div>
-
-                    </form>
-                </div>
+                <form action="regist.bbs" method="post">
+                    <table class="table table-striped" >
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="background-color: #9DCAFF; text-align: center;">게시판 글쓰기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control" placeholder="작성자" name="writer" value="${sessionScope.login.id }" maxlength="50"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50"></td>
+                            </tr>
+                            <tr>
+                                <td><textarea rows="15" class="form-control" placeholder="1000 글자 이하" name="content" maxlength="1000" ></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <input type="button" class="btn btn-primary pull-left" value="목록" onclick="location.href='list.bbs'">
+                    <input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+                </form>
             </div>
         </div>
-        </section>
-        <%@ include file="../include/footer.jsp" %>
+    </section>
+
+
+<%@ include file="../include/footer.jsp" %>

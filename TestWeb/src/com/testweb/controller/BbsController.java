@@ -1,6 +1,7 @@
 package com.testweb.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -75,39 +76,44 @@ public class BbsController extends HttpServlet {
 			
 			request.getRequestDispatcher("bbs_content.jsp").forward(request, response);
 			
-			
-			
-		} else if(command.equals("/bbs/write.bbs")) {
-			
-//			response.sendRedirect("board_write.jsp");
-			request.getRequestDispatcher("bbs_write.jsp").forward(request, response);
-			
-		} else if (command.equals("/bbs/regist.bbs")) {//글 등록 요청
-			service = new RegistServiceImpl();
-			service.execute(request, response);
-			//자식 생성 부모 저장
-			
-			//response.sendRedirect("board_list.jsp");//내가 원하는 페이지로 보내는 방식이라면
-			//mvc2에서 보내는 방식 .board 로 보내면 컨트롤러가 요청을 다시 잡아외 실행
-			response.sendRedirect("list.bbs");
-			
-			
 		
-			//게시물 수정
-		} else if (command.equals("/bbs/modify.bbs")) { //서블릿 , 수정화면 요청
-			System.out.println("수정 화면으로 이동");
-			/*
-			 * 1. contentServiceImpl() 재활용합니다.
-			 * 2. 포워드 형식으로  board_modify.ksp 로 이동
-			 * 3. 화면에서는 태그안에 데이터 값 출력
-			 */
-	
-			service = new ContentServiceImlp();
-			service.execute(request, response); //contentServiceImpl()재활용
-						
-			request.getRequestDispatcher("bbs_modify.bbs").forward(request, response);
-			//페이지로 보내기
+			// 게시물 작성 화면 처리
+			} else if (command.equals("/bbs/modify.bbs")) {
+				request.getRequestDispatcher("bbs_write.jsp").forward(request, response);
+
+				// 게시물 상세보기
+			 } else if (command.equals("/bbs/content.bbs")) {
+				service = new ContentServiceImlp();
+				service.execute(request, response);
+
+				request.getRequestDispatcher("bbs_content.jsp").forward(request, response);
+		
+				// 게시물 작성 화면 처리
+				} else if (command.equals("/bbs/write.bbs")) {
+					request.getRequestDispatcher("bbs_write.jsp").forward(request, response);
+
 			
+					// 게시물 작성 처리
+				} else if (command.equals("/bbs/regist.bbs")) {
+					service = new RegistServiceImpl();
+					service.execute(request, response);
+					//자식 생성 부모 저장
+					
+					//response.sendRedirect("board_list.jsp");//내가 원하는 페이지로 보내는 방식이라면
+					//mvc2에서 보내는 방식 .board 로 보내면 컨트롤러가 요청을 다시 잡아외 실행
+					
+					
+					response.sendRedirect("list.bbs");
+			
+			//게시물 수정
+				} else if (command.equals("/bbs/modify.bbs")) {
+					
+				
+						service = new ContentServiceImlp();
+						service.execute(request, response);
+						
+						request.getRequestDispatcher("bbs_modify.jsp").forward(request, response);
+				
 			
 		}else if (command.equals("/bbs/update.bbs")) {
 			//넘어가는 값 확인 용
@@ -128,7 +134,16 @@ public class BbsController extends HttpServlet {
 				//request.getRequestDispatcher("board_content.jsp").forward(request, response);
 			
 			//content화면으로 
-			response.sendRedirect("content.bbs?bno= " + request.getParameter("bno"));
+			int result = (int) request.getAttribute("update");
+
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			if (result == 1) {// 성공
+				out.println("<script>");
+				out.println("alert('글이 수정되었습니다');");
+				out.println("</script>");
+				response.sendRedirect("content.bbs?bno=" + request.getParameter("bno"));
+			}
 			//bno를 필요로하기에content에 실어서 보내주기
 		
 		
@@ -142,25 +157,25 @@ public class BbsController extends HttpServlet {
 			
 			service = new DeletsServiceImpl();
 			service.execute(request, response);
-			
-			response.sendRedirect("list.bbs");
-			
+			int result = (int) request.getAttribute("delete");
+
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			if (result == 1) {// 성공ㅒ
+				out.println("<script>");
+				out.println("alert('글이 삭제되었습니다');");
+				out.println("location.href='list.bbs';");
+				out.println("</script>");
+
+			} else {// 실패
+				out.println("<script>");
+				out.println("alert('글이 삭제되지 않았습니다');");
+				out.println("location.href='list.bbs';");
+				out.println("</script>");
+			}
+
 		}
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
