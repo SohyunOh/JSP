@@ -41,7 +41,6 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
-<fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.myweb.user.model.UserDAO"/>
 <fullyQualifiedTypeName name="com.myweb.user.model.UserVO"/>
 <fullyQualifiedTypeName name="com.testweb.util.filter.JdbcUtil"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
 </qualifiedTypeNameHistroy>

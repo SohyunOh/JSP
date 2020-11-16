@@ -35,7 +35,7 @@ public class BoardFilter2 implements Filter{
 		UserVO user =(UserVO)session.getAttribute("user");
 		
 		if(user == null) {
-			res.sendRedirect("/MyWeb/user/login.user");
+			res.sendRedirect("MyWeb/user/login.user");
 			return;
 		}
 		
@@ -51,7 +51,7 @@ public class BoardFilter2 implements Filter{
 			PrintWriter out= res.getWriter();
 			out.println("<script>");
 			out.println("alert('권한이 없습니다');");
-			out.println("location.href='/MyWeb/user/login.user'"); //로그인화면
+			out.println("location.href='MyWeb/user/login.user'"); //로그인화면
 			out.println("</script>");
 			return ; // 필터종료
 		}

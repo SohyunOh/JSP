@@ -1,4 +1,4 @@
-package com.testweb.util.filter;
+package com.testweb.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

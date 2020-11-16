@@ -116,3 +116,6 @@
 11월 12, 2020 18:30:28.809 [12780:12588:1112/183028.809:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
 11월 12, 2020 18:30:29.43 [12780:12588:1112/183029.043:ERROR:page_load_metrics_update_dispatcher.cc(165)] Invalid first_paint 0.38 s for first_image_paint 0.377 s
 11월 12, 2020 18:37:57.707 [6472:8716:1112/183757.707:ERROR:device_event_log_impl.cc(208)] [18:37:57.707] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.
+
+11월 16, 2020 21:15:21.615 NEW SESSION
+11월 16, 2020 21:15:21.615 [1112:10472:1116/211521.613:ERROR:device_event_log_impl.cc(208)] [21:15:21.613] Bluetooth: bluetooth_adapter_winrt.cc:1076 Getting Default Adapter failed.
