@@ -30,16 +30,6 @@
      <Resource auth="container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="300" maxWait="1000" name="jdbc/oracle" password="JSP" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521/XEPDB1" username="JSP"/>
   
     <!-- 커넥션 풀의 설정 -->
-    <Resource
-    auth="Container"
-    driverClassName = "oracle.jdbc.driver.OracleDriver"
-    url = "jdbc:oracle:thin:@localhost:1521/XEPDB1"
-    username = "JSP"
-    password = "JSP"
-    name = "jdbc/oracle"
-    type = "javax.sql.DataSource"
-    maxActive = "300" 
-    maxWait = "1000"    
-    />
+    <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="300" maxWait="1000" name="jdbc/oracle" password="JSP" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521/XEPDB1" username="JSP"/>
     
 </Context>

@@ -42,7 +42,7 @@ public class BoardDAO {
 
 	//글등록 메서드
 	public void regist(String writer,String title, String content) {
-		String sql = "insert into testboard (bno,writer,title,content) values(board_seq.nextval,?,?,?)";
+		String sql = "insert into testboard (bno,writer,title,content) values(testboard_seq.nextval,?,?,?)";
 
 		try {
 			conn = ds.getConnection();
