@@ -5,7 +5,7 @@ import java.io.DataOutput;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
+
 
 import com.myweb.user.model.UserDAO;
 import com.myweb.user.model.UserVO;
@@ -28,7 +28,7 @@ public class UserDeleteServiceImpl implements UserService {
 		
 		
 		if(result != null) { //비밀번호가 맞는 경우 (회원탈퇴진행)
-			dao.delede(id); //삭제라고 가정
+			dao.delete(id); //삭제라고 가정
 			session.invalidate();
 			return 1;
 		}else {
