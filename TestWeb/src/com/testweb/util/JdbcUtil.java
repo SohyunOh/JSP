@@ -14,6 +14,7 @@ public class JdbcUtil {
 			
 		} catch (Exception e) {
 			System.out.println("=====close에러=====");
+			e.printStackTrace();
 		}
 	}
 	

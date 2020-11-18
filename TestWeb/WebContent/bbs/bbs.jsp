@@ -25,6 +25,22 @@
 		<div class="row">
 
 			<h2>게시판 목록</h2>
+
+
+			<div align="right">
+				<select onchange="change(this)">
+					<option value="10" ${PageVO.amount == 10? 'selected' : '' }>10개씩
+						보기</option>
+					<option value="20" ${PageVO.amount == 20? 'selected' : '' }>20개씩
+						보기</option>
+					<option value="50" ${PageVO.amount == 50? 'selected' : '' }>50개씩
+						보기</option>
+					<option value="100" ${PageVO.amount == 100? 'selected' : '' }>100개씩
+						보기</option>
+				</select>
+			</div>
+
+
 			<table class="table table-striped"
 				style="text-align: center; border: 2px solid #737373">
 				<thead>
@@ -36,25 +52,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td><a>Test</a></td>
-						<td>Min</td>
-						<td>2019-09-14 08:05</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td><a>Lorem Ipsum is simply dummy text of the printing
-								and typesetting industry.</a></td>
-						<td>MBW</td>
-						<td>2019-09-15 13:05</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td><a>Test Text</a></td>
-						<td>박인욱</td>
-						<td>2019-09-15 19:05</td>
-					</tr>
 
 					<c:forEach var="vo" items="${list }">
 						<tr>
@@ -68,42 +65,41 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			
+	
 
 
 			<%-- 페이지번호 --%>
 			<div class="text-center">
 				<ul class="pagination pagination-sm">
 
-					<li><a href="#">이전</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					
+
 					<c:if test="${pageVO.prev }">
 						<li><a
-							href="list.bbs?pageNum=${pageVO.startPage - 1}&amount=${pageVO.amount}">이전</a></li>
+							href="list.bbs?pageNum=${pageVO.startPage - 1}&amount=${pageVO.amount}">이전</a>
+						</li>
 					</c:if>
 					<c:forEach var="num" begin="${pageVO.startPage }"
 						end="${pageVO.endPage }">
 						<li class="${num eq pageVO.pageNum ? 'active' : '' }"><a
-							href="list.board?pageNum=${num }&amount=${pageVO.amount}">${num }</a>
+							href="list.bbs?pageNum=${num }&amount=${pageVO.amount}">${num }</a>
 							<%-- 서버에서 넘버를 받음 --%></li>
 					</c:forEach>
 
-					<c:if test="${pageVO.next }">
-						<li><a
-							href="list.board?pageNum=${pageVO.endPage +1}&amount=${pageVO.amount}">다음</a>
-						</li>
-					</c:if>
-				</ul>
-				<button type="button" class="btn btn-info pull-right"
-					onclick="location.href='bbs_modify.bbs'">글쓰기</button>
-			</div>
+				  <c:if test="${pageVO.next }">
+                        	<li><a href="list.bbs?pageNum=${pageVO.endPage + 1}&amount=${pageVO.amount}">다음</a></li>
+                        </c:if>
+                    </ul>
+                    <button class="btn btn-info pull-right" 
+                    onclick="location.href='write.bbs'">글쓰기</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+		
 
-		</div>
-	</div>
+
 </section>
 
 <%@ include file="../include/footer.jsp"%>

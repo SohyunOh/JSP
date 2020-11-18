@@ -18,7 +18,7 @@ import com.testweb.user.model.UserVO;
 
 
 //게시글 수정 삭제
-@WebFilter({"/board/modify.board","/board/update.board","/board/delete.board" })
+@WebFilter({"/bbs/modify.bbs","/bbs/update.bbs","/bbs/delete.bbs" })
 public class BoardFilter2 implements Filter{
 
 	@Override
@@ -34,29 +34,19 @@ public class BoardFilter2 implements Filter{
 		request.setCharacterEncoding("utf-8");//한글인코딩
 		
 		HttpSession session = req.getSession();
-		UserVO user =(UserVO)session.getAttribute("user");
+		UserVO user =(UserVO)session.getAttribute("login");
 		
 		if(user == null) {
-			res.sendRedirect("/MyWeb/user/login.user");
-			return;
-		}
-		
-		String id = user.getId(); //세션에서 넘오온 아이디
-		
-		String writer = request.getParameter("writer");//화면에서 넘어온 파라미터 값
-		
-//		System.out.println("넘어온 writer:" + writer) ;//- 다시 확인하기 ㅜㅜ
-		
-		
-		if( writer == null || !id.equals(writer)) { //권한이 없는 경우
-			res.setContentType("text/html; charset=UTF-8");//응답 문서 실행
-			PrintWriter out= res.getWriter();
+			res.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = res.getWriter();
 			out.println("<script>");
-			out.println("alert('권한이 없습니다');");
-			out.println("location.href='/MyWeb/user/login.user'"); //로그인화면
+			out.println("alert('로그인이 필요합니다');");
+			out.println("location.href='/TestWeb/user/login.user';");
 			out.println("</script>");
-			return ; // 필터종료
+			
+			return; //종료(중요)
 		}
+	
 		
 		
 		chain.doFilter(request, response); // 컨트롤러릐 실행

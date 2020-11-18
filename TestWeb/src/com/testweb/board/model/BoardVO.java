@@ -11,6 +11,7 @@ public class BoardVO {
 
 
 	public BoardVO() {
+		super();
 		
 	}
 	
