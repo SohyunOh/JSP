@@ -60,19 +60,16 @@
                         <div class="form-group">
                              <label for="hp">이메일</label><br>
                             <input class="form-control sel" name="email" required >@
-                            <select class="form-control sel" name="email2" required >
-                                <option>naver.com</option>
-                                <option>gmail.com</option>
-                                <option>daum.net</option>
-                            </select>
+                            <input class="form-control sel" name="email2" required >
+                            </input>
                         </div>
                         
                         <div class="form-group">
                             <label for="addr-num">주소</label>
-                            <input type="text" class="form-control" name="addr-basic" placeholder="기본주소" required >
+                            <input type="text" class="form-control" name="address" placeholder="기본주소" required >
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="addr-detail" placeholder="상세주소" required >
+                            <input type="text" class="form-control" name="addressinfo" placeholder="상세주소" required >
                         </div>
                         
                         <p>${msg}</p>

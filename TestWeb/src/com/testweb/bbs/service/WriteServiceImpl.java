@@ -1,12 +1,14 @@
-package com.testweb.board.service;
+package com.testweb.bbs.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.testweb.board.model.BoardDAO;
+import com.testweb.bbs.model.BoardDAO;
 
-public class RegistServiceImpl implements BoardService {
+public class WriteServiceImpl implements BoardService {
 
+	
+//	등록 서블릿
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String writer = request.getParameter("writer");
@@ -20,8 +22,8 @@ public class RegistServiceImpl implements BoardService {
 		
 		//DAO객체 생성
 		BoardDAO dao = BoardDAO.getInstance();
-		dao.regist(writer,title,content);
-		
+		dao.write(writer, title, content);
+
 		
 	}
 

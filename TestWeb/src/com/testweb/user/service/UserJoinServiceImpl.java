@@ -20,17 +20,9 @@ public class UserJoinServiceImpl implements UserService {
 		String ph3 = request.getParameter("ph3");
 		String email = request.getParameter("email");
 		String email2 = request.getParameter("email2");
-		String address = request.getParameter("addr-basic");
-		String addressinfo = request.getParameter("addr-detail");
+		String address = request.getParameter("address");
+		String addressinfo = request.getParameter("addressinfo");
 		
-//		System.out.println(id);
-//		System.out.println(pw);
-//		System.out.println(name);
-//		System.out.println(phone);
-//		System.out.println(email);
-//		System.out.println(address);
-//		System.out.println(addressinfo);
-
 		//중복검사
 				UserDAO dao = UserDAO.getInstance();
 				int result = dao.checkId(id); //중복시1, 중복 x 0

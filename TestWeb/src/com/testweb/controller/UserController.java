@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.testweb.bbs.service.BoardService;
+import com.testweb.bbs.service.UserListServiceImpl;
 import com.testweb.user.service.UserDeleteServiceImpl;
 import com.testweb.user.service.UserJoinServiceImpl;
 import com.testweb.user.service.UserLoginServiceImpl;
@@ -51,12 +53,15 @@ public class UserController extends HttpServlet {
 		
 		//부모타입선언
 		UserService service;
+		BoardService service2;
 		
 		//회원가입 화면 처리
 		if(command.equals("/user/join.user")) {
 			request.getRequestDispatcher("user_join.jsp").forward(request, response);
 		
-		}else if (command.equals("/user/joinFrom.user")) { //회원가입 요청
+
+		//회원가입 요청
+		}else if (command.equals("/user/joinFrom.user")) { 
 			
 			service = new UserJoinServiceImpl();
 			int result = service.execute(request, response);//중복시 1, 성공시0;
@@ -70,30 +75,44 @@ public class UserController extends HttpServlet {
 				
 			}
 			
-			
-		} else if (command.equals("/user/login.user")) { //로그인 화면처리
+			//로그인 화면처리
+		} else if (command.equals("/user/login.user")) {
 			request.getRequestDispatcher("user_login.jsp").forward(request, response);
 				
-		
-		}else if (command.equals("/user/loginForm.user")) {//로그인 처리	
+			//로그인 처리	
+		}else if (command.equals("/user/loginForm.user")) {
 			service = new UserLoginServiceImpl();
 			int result  = service.execute(request, response);
 			
-			if(result ==1) { //로그인 성공
-				response.sendRedirect("mypage.user");
-			}else { //로그인 실패
-				request.setAttribute("msg",  "아이디 비밀번호를 확인하세요");
+			service2 = new UserListServiceImpl();
+			service2.execute(request, response);
+			
+			if(result == 1) {
+				//로그인 성공
+				request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
+				
+			}else {
+				//로그인 실패
+				request.setAttribute("msg", "아이디, 비밀번호를 확인해주세요");
 				request.getRequestDispatcher("user_login.jsp").forward(request, response);
+				
 			}
 			
-						
-		} else if(command.equals("/user/mypage.user")) { //마이페이지 화면처리 
+			
+			 //마이페이지 화면처리 
+		} else if(command.equals("/user/mypage.user")) {
+			service2 = new UserListServiceImpl();
+			service2.execute(request, response);
+			
 			request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
 		
-		}else if (command.equals("/user/mypageinfo.user")) { //수정화면 이동
+			//정보 수정화면 이동
+		}else if (command.equals("/user/update.user")) { 
 			//세션에 값이 들어있음.
 			request.getRequestDispatcher("user_mypageinfo.jsp").forward(request, response);
 			
+			
+			//정보수정요청
 		} else if(command.equals("/user/updateForm.user")) {
 		
 			service = new UserUpdateServiceImpl();
@@ -108,13 +127,17 @@ public class UserController extends HttpServlet {
 				out.println("location.href='mypage.user';");
 				out.println("</script>");
 			}else {//실패0
-				response.sendRedirect("mypage.user");//실패시 마이페이지로
+				response.sendRedirect("mypageinfo.user");//실패시 마이페이지로
 			}
 		
-		}else if (command.equals("/user/deleteForm.user")) {//회원탈퇴요청
+		}else if (command.equals("/user/delete.user")) {//회원탈퇴요청
 					
 			service = new UserDeleteServiceImpl();
 			int result = service.execute(request, response);
+			
+			service2 = new UserListServiceImpl();
+			service2.execute(request, response);
+			
 			
 			if(result == 1) {//회원탈퇴성공
 				response.sendRedirect("login.user");
@@ -124,7 +147,15 @@ public class UserController extends HttpServlet {
 				request.getRequestDispatcher("user_mypage.jsp").forward(request, response);
 			}
 			
+		}else if(command.equals("/user/logout.user")) { //로그아웃
+			HttpSession session = request.getSession();
+			session.invalidate();
 			
+			
+			response.sendRedirect(request.getContextPath());
+			
+			
+		}
 		
 			
 		}
@@ -136,4 +167,3 @@ public class UserController extends HttpServlet {
 
 	
 
-}

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> 
 <%@ include file="../include/header.jsp" %>
 
     <style type="text/css">
@@ -17,20 +19,21 @@
                         <p>${sessionScope.user.id}(${sessionScope.user.name})님 회원정보</p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary" onclick="location.href='mypageinfo.user'">회원정보변경</button>
+                   		<button type="button" class="btn btn-primary" onclick="location.href='pageContext.request.contextPath }/user/update.user'">회원정보변경</button>
                         <button type="button" class="btn btn-primary" id="delCheck" onclick="delete-hidden">회원 탈퇴</button>
                         <p>${msg }</p>
                     </div>
-                    <div class="delete-hidden" >
-                        <form action="deleteForm.user" method="post" name="regForm">
-                        	<input type="password" class="form-control" placeholder="비밀번호를 입력하세요" name="pw">
-                        	<button type="button" class="btn btn-primary" onclick="delete_btn()">확인</button>
+                            <div class="delete-hidden">
+                        <form action="delete.user" method="post" name="deleteForm">
+                        <input type="password"  name="pw" class="form-control" placeholder="비밀번호를 입력하세요">
+                        <button type="button" class="btn btn-primary" onclick="submit()">확인</button>
                         </form>
                     </div>
                     
+
                     <br>
                     <div>
-                        <p>${sessionScope.user.id}님의 작성 게시물</p>
+                        <p>${sessionScope.user.id }님의 작성 게시물</p>
                         <table class="table table-striped" style="text-align: center; border: 2px solid #737373">
                     <thead>
                         <tr>
@@ -40,22 +43,46 @@
                             <th style="text-align: center;">작성일</th>
                         </tr>
                     </thead>
+                    
+                    <!-- 내가쓴글 리스트 업로드 -->
+                    
                     <tbody>
+                    
+                    <c:forEach var="userList" items="${userList }">
                         <tr>
-                            <td>1</td>
-                            <td><a>Test</a></td>
-                            <td>Min</td>
-                            <td>2019-09-14 08:05</td>
+                            <td>${userList.bno }</td>
+                            <td><a href="${pageContext.request.contextPath }/bbs/content.bbs?bno=${userList.bno} ">${userList.title }</a></td>
+                            <td>${userList.writer }</td>
+                            <td><fmt:formatDate value="${userList.ragdate }" /></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a>Lorem Ipsum is simply dummyg industry.</a></td>
-                            <td>MBW</td>
-                            <td>2019-09-15 13:05</td>
-                        </tr>
-
+                        
+                        
+                	</c:forEach>
                     </tbody>
+                    
                 </table>
+                
+                <div class="text-center">
+                <ul class="pagination pagination-sm">
+                    	<c:if test="${uPVO.prev} ">
+                        	<li><a href="userList.bbs?pNum=${uPVO.startPage-1 }&amount=${uPVO.amount}">이전</a></li>
+                        </c:if>
+                        
+                        
+                        <c:forEach var="num" begin="${uPVO.startPage }" end="${uPVO.endPage }">
+                        
+                        <li class="${num eq uPVO.pNum ? 'active' : '' }">
+                        <a href="userList.bbs?pageNum=${num }&amount=${uPVO.amount }">${num }</a></li>
+                        
+                        </c:forEach>
+                        
+                        <c:if test="${uPVO.next}">
+                        <li><a href="userList.bbs?pageNum=${uPVO.startpage+1 }&amount=${uPVO.amount}">다음</a></li>
+                    	</c:if>
+                    
+                    </ul>
+	                
+                    </div>
                     </div>
                     
                     
@@ -66,15 +93,13 @@
 
         </div>
 
-    </section>
-   
-   <script type="text/javascript" >
-   	function delete_btn() {
-		document.regForm.submit();
+	<script>
+	function submit() {
+		document.deleteForm.pw.value;
 	}
-   </script> 
-   
-  <script>
+	</script>
+	
+	<script>
         //탈퇴버튼 디스플레이 처리
         var delCheck = document.getElementById("delCheck");
         delCheck.onclick = function() {
@@ -86,4 +111,13 @@
             }
         }
     </script>
-  <%@ include file="../include/footer.jsp" %>
+
+    </section>
+    
+    
+    
+
+    
+    
+<%@include file="../include/footer.jsp" %>
+    

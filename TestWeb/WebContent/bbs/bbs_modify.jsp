@@ -29,9 +29,9 @@
                         <!--구현로직: 버튼은 온클릭을 사용하던 자바스크립트를 이용해야 합니다-->
                         <div class="form-group">
                             <button type="button" class="btn btn-success" onclick="location.href='list.bbs'">목록</button>
-                             <button type="submit" class="btn btn-info" onclick="location.href='modiForm.bbs?bno=${vo.bno }&writer=${vo.writer }'">수정</button>
+                            <button type="button" class="btn btn-info" onclick="update()">수정</button>
                             
-                            <button type="button" class="btn btn-default"onclick="location.href='delete.bbs?bno=${vo.bno }&writer=${vo.writer }'">삭제</button>
+                            <button type="button" class="btn btn-default" onclick="location.href='delete.bbs?bno=${vo.bno}'">삭제</button>
                         </div>
 
                     </form>

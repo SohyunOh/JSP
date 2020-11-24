@@ -37,9 +37,6 @@
                                 <td>
                                     <input class="form-control input-sm" name="email" value="${sessionScope.user.email }">@
                                     <select class="form-control input-sm sel" name="email2" value="${sessionScope.user.email2}">
-                                        <option>naver.com</option>
-                                        <option>gmail.com</option>
-                                        <option>daum.net</option>
                                     </select>
                               <!--    <button class="btn btn-info">중복확인</button>  -->   
                                 </td>
@@ -54,11 +51,11 @@
                             </tr>
                             <tr>
                                 <td class="m-title">*주소</td>
-                                <td><input class="form-control input-sm add" name="addr-basic" value="${sessionScope.user.address }"></td>
+                                <td><input class="form-control input-sm add" name="address" value="${sessionScope.user.address }"></td>
                             </tr>
                             <tr>
                                 <td class="m-title">*상세주소</td>
-                                <td><input class="form-control input-sm add" name="addr-detail" value="${sessionScope.user.addressinfo }"></td>
+                                <td><input class="form-control input-sm add" name="addressinfo" value="${sessionScope.user.addressinfo }"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -66,7 +63,7 @@
                     
                     <div class="titlefoot">
                         <button class="btn"  onclick="update()" >수정</button>
-                        <button type="button" class="btn" onclick="location.href='mypage.user'">목록</button>
+                        <button type="button" class="btn" onclick="history.go(-1)'">목록</button>
                     </div>
                     
                 </div>

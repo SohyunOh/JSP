@@ -1,9 +1,11 @@
-package com.testweb.board.service;
+package com.testweb.bbs.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.testweb.board.model.BoardDAO;
+import com.testweb.bbs.model.BoardDAO;
+import com.testweb.user.model.UserDAO;
+import com.testweb.user.model.UserVO;
 
 
 public class UpdateServiceImpl implements BoardService {
@@ -15,16 +17,10 @@ public class UpdateServiceImpl implements BoardService {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		//DAO객체생성, 상세보기 메서드 실행
-//			BoardDAO dao = BoardDAO.getInstance();
-			//BoardVO vo = dao.update(bno, title, content);
-			//request.setAttribute("vo", vo);
 
 		BoardDAO dao = BoardDAO.getInstance(); //싱글톤
 		dao.update(bno, title, content);
-				
 	
-		
 
 	}
 

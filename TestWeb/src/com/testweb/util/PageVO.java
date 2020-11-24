@@ -2,7 +2,7 @@ package com.testweb.util;
 
 public class PageVO {
 	
-	//화면에 보여질 pagrNation을 계산하는 클래스(pageNum와 전체게시글 수, amount를 가지고 다님
+	//화면에 보여질 pagrNation을 계산하느 ㄴ클래스(pageNum와 전체게시글 수, amount를 가지고 다님
 	
 	private int startPage; //게시판 화면에 보여질 첫페이지 번호
 	private int endPage; //게시판 화면에 보여질 끝페이지 번호
@@ -26,11 +26,11 @@ public class PageVO {
 		//현재페이지 번호 1~10 이다 -> 화면에 보여질 끝번호 10
 		//현재페이지 번호 14번 이다 -> 화면에 보여질 끝번호 20
 		//공식(int) MAth.ceil(페이지번호 /화면에 보여질 페이지 수) X 화면에 보여질 페이지 수
-		this.endPage = (int)Math.ceil(this.pageNum /(double) 5) * 5 ;
+		this.endPage = (int)Math.ceil(this.pageNum /(double) 10) * 10 ;
 		
 		//2.startPage계산
 		//공식 : 긑페이지 - 회면에보여질 페이지 수 +1
-		this.startPage = this.endPage -5 +1;
+		this.startPage = this.endPage -10 +1;
 		
 		//3.realEnd실제 번호
 		// 만약에 게시글이 52개면?  -> 끝체이지번호 6

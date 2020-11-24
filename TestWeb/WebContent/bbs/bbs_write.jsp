@@ -18,7 +18,8 @@
     <section>
         <div class="container" style="margin-top: 5%;">
             <div class="row">
-                <form action="regist.bbs" method="post">
+               <form action="writeForm.bbs" name="writeForm" method="post">
+               <!--  <form action="regist.bbs" method="post"> -->
                     <table class="table table-striped" >
                         <thead>
                             <tr>

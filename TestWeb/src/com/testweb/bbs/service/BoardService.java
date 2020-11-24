@@ -1,4 +1,4 @@
-package com.testweb.board.service;
+package com.testweb.bbs.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

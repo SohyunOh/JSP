@@ -21,15 +21,9 @@ public class UserUpdateServiceImpl implements UserService {
 		String ph3 = request.getParameter("ph3");
 		String email = request.getParameter("email");
 		String email2 = request.getParameter("email2");
-		String address = request.getParameter("adress");
-		String addressinfo = request.getParameter("adressinfo");
+		String address = request.getParameter("address");
+		String addressinfo = request.getParameter("addressinfo");
 
-//		String[] phone = Allphone.split("-");
-//		String ph1 = phone[0];
-//		String ph2 = phone[1];
-//		String ph3 = phone[2];
-//		String[] emails =  Allemail.split("@");
-//		String email  = emails[0];  
 		
 		UserVO vo = new UserVO(id,pw,name,ph1,ph2,ph3,email,email2, address, addressinfo, null);
 		UserDAO dao = UserDAO.getInstance();

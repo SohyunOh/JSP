@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.testweb.board.service.BoardService;
-import com.testweb.board.service.GetListServiceImpl;
-
+import com.testweb.bbs.service.BoardService;
+import com.testweb.bbs.service.GetListServiceImpl;
 
 
 @WebServlet("")

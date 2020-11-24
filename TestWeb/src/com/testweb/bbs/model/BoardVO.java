@@ -1,4 +1,4 @@
-package com.testweb.board.model;
+package com.testweb.bbs.model;
 
 import java.sql.Timestamp;
 
@@ -11,7 +11,6 @@ public class BoardVO {
 
 
 	public BoardVO() {
-		super();
 		
 	}
 	

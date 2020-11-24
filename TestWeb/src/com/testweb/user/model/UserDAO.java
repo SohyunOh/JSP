@@ -17,7 +17,7 @@ public class UserDAO {
 	
 	
 	private UserDAO() {
-		//드라이버 로드
+		//드라이버 로드 -- 커넥트 풀
 		try {
 			
 			InitialContext ctx = new InitialContext();
@@ -158,7 +158,8 @@ public class UserDAO {
 			
 			return vo;
 		}
-		//수정 
+		
+		//회원수정 
 		public int update(UserVO vo) {
 			int result = 0;
 			String sql = "update testuser "
@@ -190,6 +191,7 @@ public class UserDAO {
 				pstmt.setString(9, vo.getAddressinfo());
 				pstmt.setString(10, vo.getId());
 				
+				
 				//성공시 1, 실패시 0
 				result = pstmt.executeUpdate();
 				
@@ -210,9 +212,8 @@ public class UserDAO {
 			String sql = "DELETE FROM testuser where id = ? " ; 
 			
 			try {
-//				conn = DriverManager.getConnection(url, uid, upw);
+
 				conn = ds.getConnection();
-				
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1,id);
 				

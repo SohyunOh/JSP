@@ -1,12 +1,12 @@
-package com.testweb.board.service;
+package com.testweb.bbs.service;
 
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.testweb.board.model.BoardDAO;
-import com.testweb.board.model.BoardVO;
+import com.testweb.bbs.model.BoardDAO;
+import com.testweb.bbs.model.BoardVO;
 import com.testweb.util.PageVO;
 
 
@@ -28,11 +28,9 @@ public class GetListServiceImpl implements BoardService {
 			amount = Integer.parseInt(request.getParameter("amount"));
 		}
 		
-		//2. PageVO() 생성 
-		ArrayList<BoardVO> list= dao.getList(pageNum, amount); //모든 게시글을 화면에 보여줄 데이터
-
+		//2. PageVO() 생성
+		ArrayList<BoardVO> list= dao.getList(pageNum, amount); //화면에 보여질 데이터
 		int total = dao.getTotal(); // 토탈 번호(전체 게시물 수) 얻어오기
-
 		PageVO pageVO = new PageVO(pageNum, amount, total);
 		
 		//화면으로 가져가기 위해 request에 list 저장
